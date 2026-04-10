@@ -15,4 +15,4 @@ Domus is a minimalist personal command center designed to organize your daily li
 ### Tech Stack
 * **Backend:** Go
 * **Frontend:** Templ & HTMX (No heavy JS frameworks)
-* **Deployment:** Managed via [Opus](#https://github.com/CaioSGoncalves/opus)
+* **Deployment:** Managed via [Opus](https://github.com/CaioSGoncalves/opus)
