@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"home-todo/internal/handlers"
-	"home-todo/internal/repository"
-	"home-todo/internal/services"
+	"domus/internal/handlers"
+	"domus/internal/repository"
+	"domus/internal/services"
 
 	"github.com/a-h/templ"
 )

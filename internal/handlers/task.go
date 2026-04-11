@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"home-todo/internal/services"
-	"home-todo/internal/views"
+	"domus/internal/services"
+	"domus/internal/views"
 
 	"github.com/a-h/templ"
 )

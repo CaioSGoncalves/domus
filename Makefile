@@ -2,7 +2,7 @@
 
 .PHONY: fmt vet test clean generate build run
 
-APP_NAME := app
+APP_NAME := domus
 
 fmt:
 	go fmt ./..
@@ -22,7 +22,7 @@ generate: fmt
 
 build: generate fmt vet
 	mkdir -p bin
-	go build -o bin/$(APP_NAME) ./cmd/app
+	go build -o bin/$(APP_NAME) ./cmd/$(APP_NAME)
 
 run: generate fmt vet
 	go run ./cmd/$(APP_NAME)

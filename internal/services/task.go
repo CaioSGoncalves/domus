@@ -1,6 +1,6 @@
 package services
 
-import "home-todo/internal/repository"
+import "domus/internal/repository"
 
 type TaskService struct {
 	repo *repository.TaskRepo

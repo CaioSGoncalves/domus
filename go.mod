@@ -1,4 +1,4 @@
-module home-todo
+module domus
 
 go 1.26.1
 
