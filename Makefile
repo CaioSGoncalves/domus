@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := build
 
-.PHONY: fmt vet test clean generate build run
 
 APP_NAME := domus
 
+.PHONY: fmt vet test
 fmt:
 	go fmt ./..
 	templ fmt .
@@ -14,15 +14,17 @@ vet:
 test:
 	go test ./...
 
+.PHONY: clean run build build-linux
 clean:
 	rm -rf bin
 
-generate: fmt
-	templ generate
+run: fmt vet
+	go run ./cmd/$(APP_NAME)
 
-build: generate fmt vet
+build: fmt vet
 	mkdir -p bin
 	go build -o bin/$(APP_NAME) ./cmd/$(APP_NAME)
 
-run: generate fmt vet
-	go run ./cmd/$(APP_NAME)
+build-linux: fmt vet
+	mkdir -p bin
+	GOOS=linux GOARCH=amd64 go build -o bin/$(APP_NAME) ./cmd/$(APP_NAME)

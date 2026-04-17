@@ -34,3 +34,5 @@ go.work.sum
 # templ generated files
 *_templ.go
 bin
+internal/server/static/
+.DS_Store

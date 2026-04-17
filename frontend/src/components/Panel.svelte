@@ -1,0 +1,12 @@
+<script lang="ts">
+    import Column from "./Column.svelte";
+    import type { Panel } from "../lib/api";
+
+    export let panel: Panel;
+</script>
+
+<div class="flex gap-4">
+    {#each panel.columns as col}
+        <Column column={col} />
+    {/each}
+</div>

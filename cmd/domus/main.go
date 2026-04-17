@@ -1,25 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
-	"domus/internal/handlers"
-	"domus/internal/repository"
-	"domus/internal/services"
-
-	"github.com/a-h/templ"
+	"domus/internal/server"
 )
 
 func main() {
-	repo := repository.NewTaskRepo()
-	service := services.NewTaskService(repo)
-	handler := handlers.NewTaskHandler(service)
+	http.Handle("/", server.SPAHandler())
 
-	http.Handle("/", templ.Handler(handler.Home()))
-	http.HandleFunc("/tasks", handler.AddTask)
-	http.HandleFunc("/tasks/move", handler.MoveTask)
+	http.HandleFunc("/api/tasks", server.GetTasks)
+	http.HandleFunc("/api/tasks/move", server.MoveTask)
 
-	fmt.Println("Server is running on http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }
