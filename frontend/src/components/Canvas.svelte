@@ -12,17 +12,19 @@
 </script>
 
 <div class="p-4 space-y-4">
-    <div class="tabs">
+    <!-- Tabs -->
+    <div class="tabs tabs-boxed w-full justify-center">
         {#each panels as p, i}
-            <a
+            <button
                 class="tab {i === current ? 'tab-active' : ''}"
                 on:click={() => (current = i)}
             >
                 {p.name}
-            </a>
+            </button>
         {/each}
     </div>
 
+    <!-- Panel -->
     {#if panels.length}
         <Panel panel={panels[current]} />
     {/if}

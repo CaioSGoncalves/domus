@@ -5,8 +5,8 @@
     export let panel: Panel;
 </script>
 
-<div class="flex gap-4">
+<div class="flex gap-4 overflow-x-auto pb-4">
     {#each panel.columns as col}
-        <Column column={col} />
+        <Column column={col} panelId={panel.id} />
     {/each}
 </div>
