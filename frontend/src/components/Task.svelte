@@ -32,7 +32,9 @@
     >
         <div class="card-body p-1 group">
             <div class="flex items-center justify-between">
-                <p class="text-sm flex-1">{task?.title}</p>
+                <p class="text-sm flex-1 truncate" title={task?.title}>
+                    {task?.title}
+                </p>
                 <button
                     class="btn btn-ghost btn-xs opacity-0 group-hover:opacity-100 transition"
                 >

@@ -9,7 +9,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../internal/server/static",
+    outDir: "../internal/handler/static",
     emptyOutDir: true,
   },
 });

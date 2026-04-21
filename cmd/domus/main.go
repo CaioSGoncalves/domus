@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"domus/internal/handler"
@@ -28,5 +29,6 @@ func main() {
 	})
 	http.HandleFunc("/api/tasks/move", taskHandler.MoveTask)
 
+	fmt.Println("Server listening on :8080")
 	http.ListenAndServe(":8080", nil)
 }
